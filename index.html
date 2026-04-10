@@ -244,10 +244,7 @@
     #about { border-top: 1px solid var(--border); }
 
     .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: start;
+      max-width: 760px;
     }
 
     .about-text p {
@@ -258,38 +255,6 @@
     }
 
     .about-text p strong { color: var(--text); }
-
-    .about-stats {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
-    }
-
-    .stat-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 1.5rem;
-      transition: border-color 0.2s;
-    }
-
-    .stat-card:hover { border-color: var(--accent); }
-
-    .stat-num {
-      font-size: 2.2rem;
-      font-weight: 800;
-      color: var(--accent);
-      font-family: 'Space Mono', monospace;
-      line-height: 1;
-      margin-bottom: 0.4rem;
-    }
-
-    .stat-label {
-      font-size: 0.78rem;
-      color: var(--muted);
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-    }
 
     /* ─── SKILLS ─── */
     #skills { background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
@@ -306,6 +271,19 @@
       border-radius: 8px;
       padding: 1.8rem;
       transition: border-color 0.2s, transform 0.2s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .skill-category::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      opacity: 0.9;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
     }
 
     .skill-category:hover {
@@ -332,6 +310,13 @@
       color: var(--accent2);
     }
 
+    .skill-summary {
+      margin: 0 0 1rem;
+      font-size: 0.88rem;
+      line-height: 1.6;
+      color: var(--muted);
+    }
+
     .skill-tags {
       display: flex;
       flex-wrap: wrap;
@@ -346,6 +331,22 @@
       background: rgba(123,97,255,0.1);
       border: 1px solid rgba(123,97,255,0.2);
       color: var(--text);
+    }
+
+    .skill-category--security::before {
+      background: linear-gradient(90deg, #ef4444, #f97316);
+    }
+
+    .skill-category--languages::before {
+      background: linear-gradient(90deg, #22c55e, #14b8a6);
+    }
+
+    .skill-category--networking::before {
+      background: linear-gradient(90deg, #3b82f6, #06b6d4);
+    }
+
+    .skill-category--tools::before {
+      background: linear-gradient(90deg, #f59e0b, #eab308);
     }
 
     /* ─── PROJECTS ─── */
@@ -623,10 +624,6 @@
     <div class="hero-grid"></div>
     <div class="hero-glow"></div>
     <div class="hero-content">
-      <div class="status-badge">
-        <span class="status-dot"></span>
-        Open to internships & opportunities
-      </div>
       <div class="hero-tag">Computer Information Systems · Cal Poly Pomona</div>
       <h1>Josh<br><span class="highlight">Hung</span></h1>
       <p class="hero-desc">
@@ -635,6 +632,7 @@
       </p>
       <div class="hero-btns">
         <a href="#projects" class="btn btn-primary">View Projects</a>
+        <a href="Josh_Hung_Resume.pdf" target="_blank" class="btn btn-secondary">Resume</a>
         <a href="#contact" class="btn btn-secondary">Get in Touch</a>
       </div>
     </div>
@@ -647,35 +645,17 @@
         <p class="section-label">// about me</p>
         <h2 class="section-title">Building a foundation in <span>security</span></h2>
         <p>
-          I'm a <strong>Computer Information Systems</strong> student at Cal Poly Pomona, 
-          focused on pursuing a career in <strong>Cybersecurity</strong>, with a 3.98 GPA.
+          I'm a <strong>Computer Information Systems</strong> student at Cal Poly Pomona with a
+          3.98 GPA and a strong interest in <strong>Cybersecurity</strong>, network defense, and practical technical problem-solving.
         </p>
         <p>
-          From network fundamentals to ethical hacking concepts, I'm constantly expanding my 
-          knowledge through coursework, national competitions, personal projects, and hands-on labs.
+          My experience is grounded in coursework, personal projects, hands-on labs, and cybersecurity competitions,
+          where I continue building skills in networking, system security, and threat analysis.
         </p>
         <p>
-          When I'm not studying, I enjoy tackling machines on Hack The Box, grinding CTF challenges on picoCTF, 
-	  and seeking out online materials to continuously sharpen my skills.
+          Outside the classroom, I sharpen those skills through platforms like Hack The Box and picoCTF while
+          continuing to learn from real-world tools, labs, and independent study.
         </p>
-      </div>
-      <div class="about-stats">
-        <div class="stat-card">
-          <div class="stat-num">CIS</div>
-          <div class="stat-label">Major</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-num">CPP</div>
-          <div class="stat-label">Cal Poly Pomona</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-num">🔐</div>
-          <div class="stat-label">Cybersecurity Focus</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-num">∞</div>
-          <div class="stat-label">Always Learning</div>
-        </div>
       </div>
     </div>
   </section>
@@ -686,56 +666,66 @@
       <p class="section-label">// technical skills</p>
       <h2 class="section-title">Tools & <span>Technologies</span></h2>
       <div class="skills-grid">
-        <div class="skill-category">
+        <div class="skill-category skill-category--security">
           <div class="skill-cat-header">
             <span class="skill-icon">🛡️</span>
             <span class="skill-cat-name">Cybersecurity</span>
           </div>
+          <p class="skill-summary">Threat detection, investigation, and practical defensive security workflows.</p>
           <div class="skill-tags">
             <span class="tag">Network Security</span>
             <span class="tag">Threat Analysis</span>
-            <span class="tag">Ethical Hacking</span>
+            <span class="tag">Vulnerability Assessment</span>
+            <span class="tag">Incident Response</span>
+            <span class="tag">Log Analysis</span>
+            <span class="tag">Security Monitoring</span>
+            <span class="tag">OSINT</span>
             <span class="tag">Wireshark</span>
             <span class="tag">Nmap</span>
           </div>
         </div>
-        <div class="skill-category">
+        <div class="skill-category skill-category--languages">
           <div class="skill-cat-header">
             <span class="skill-icon">💻</span>
-            <span class="skill-cat-name">Programming</span>
+            <span class="skill-cat-name">Programming Languages</span>
           </div>
+          <p class="skill-summary">Core scripting and data languages used for automation, analysis, and tooling.</p>
           <div class="skill-tags">
-            <span class="tag">Python</span>
             <span class="tag">Bash</span>
-            <span class="tag">HTML/CSS</span>
-            <span class="tag">JavaScript</span>
+            <span class="tag">Python</span>
             <span class="tag">SQL</span>
           </div>
         </div>
-        <div class="skill-category">
+        <div class="skill-category skill-category--networking">
           <div class="skill-cat-header">
             <span class="skill-icon">🖧</span>
             <span class="skill-cat-name">Networking</span>
           </div>
+          <p class="skill-summary">Foundational network concepts, traffic analysis, and hands-on lab work.</p>
           <div class="skill-tags">
             <span class="tag">TCP/IP</span>
             <span class="tag">DNS</span>
+            <span class="tag">Subnetting</span>
             <span class="tag">Firewalls</span>
             <span class="tag">VPN</span>
             <span class="tag">Cisco Packet Tracer</span>
           </div>
         </div>
-        <div class="skill-category">
+        <div class="skill-category skill-category--tools">
           <div class="skill-cat-header">
             <span class="skill-icon">🖥️</span>
             <span class="skill-cat-name">Systems & Tools</span>
           </div>
+          <p class="skill-summary">Operating systems, productivity software, virtualization, and day-to-day development tools.</p>
           <div class="skill-tags">
             <span class="tag">Linux</span>
             <span class="tag">Windows Server</span>
-            <span class="tag">VirtualBox</span>
+            <span class="tag">VMware Workstation</span>
             <span class="tag">Kali Linux</span>
-            <span class="tag">Git</span>
+            <span class="tag">Git/GitHub</span>
+            <span class="tag">Office 365</span>
+            <span class="tag">Google Workspace</span>
+            <span class="tag">VS Code</span>
           </div>
         </div>
       </div>
@@ -831,17 +821,22 @@
       <p class="section-label">// contact</p>
       <h2 class="section-title">Let's <span>Connect</span></h2>
       <p>
-        I'm actively looking for internship opportunities and always open to connecting with 
-        professionals in the cybersecurity field. Feel free to reach out!
+        Feel free to reach out if you'd like to connect, collaborate, or talk cybersecurity.
       </p>
       <div class="contact-links">
+        <a href="Josh_Hung_Resume.pdf" target="_blank" class="contact-row">
+          <span class="contact-row-icon">📄</span>
+          <span class="contact-row-label">Resume</span>
+          <span class="contact-row-value">Josh_Hung_Resume.pdf</span>
+          <span class="contact-row-arrow">→</span>
+        </a>
         <a href="mailto:rjhung8949@gmail.com" class="contact-row">
           <span class="contact-row-icon">✉️</span>
           <span class="contact-row-label">Email</span>
           <span class="contact-row-value">rjhung8949@gmail.com</span>
           <span class="contact-row-arrow">→</span>
         </a>
-        <a href="https://linkedin.com/in/joshhung" target="_blank" class="contact-row">
+        <a href="https://linkedin.com/in/jrhung" target="_blank" class="contact-row">
           <span class="contact-row-icon">💼</span>
           <span class="contact-row-label">LinkedIn</span>
           <span class="contact-row-value">linkedin.com/in/jrhung</span>
