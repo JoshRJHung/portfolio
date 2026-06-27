@@ -256,6 +256,73 @@
 
     .about-text p strong { color: var(--text); }
 
+    /* ─── SCHOLARSHIP ─── */
+    #scholarship {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .scholarship-panel {
+      max-width: 860px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .scholarship-panel::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent), var(--accent3));
+    }
+
+    .scholarship-kicker {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      margin-bottom: 0.8rem;
+    }
+
+    .scholarship-title {
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    .scholarship-desc {
+      max-width: 720px;
+      color: var(--muted);
+      line-height: 1.75;
+      font-size: 1rem;
+    }
+
+    .scholarship-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: 1.5rem;
+    }
+
+    .scholarship-badge {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.7rem;
+      color: var(--text);
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      background: rgba(0,245,212,0.08);
+      border: 1px solid rgba(0,245,212,0.18);
+    }
+
     /* ─── SKILLS ─── */
     #skills { background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
 
@@ -612,6 +679,7 @@
     <div class="nav-logo">jh.dev</div>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
+      <li><a href="#scholarship">Scholarship</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#certifications">Certs</a></li>
@@ -656,6 +724,27 @@
           Outside the classroom, I sharpen those skills through platforms like Hack The Box and picoCTF while
           continuing to learn from real-world tools, labs, and independent study.
         </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCHOLARSHIP -->
+  <section id="scholarship">
+    <div class="fade-in">
+      <p class="section-label">// scholarship</p>
+      <h2 class="section-title">Cybersecurity <span>Scholarship</span></h2>
+      <div class="scholarship-panel">
+        <div class="scholarship-kicker">Federally Funded Program</div>
+        <h3 class="scholarship-title">CyberCorps: Scholarship for Service (SFS) Scholar</h3>
+        <p class="scholarship-desc">
+          Selected for the federally funded CyberCorps Scholarship for Service program, which supports
+          the development of cybersecurity professionals preparing for government service.
+        </p>
+        <div class="scholarship-meta">
+          <span class="scholarship-badge">Cybersecurity</span>
+          <span class="scholarship-badge">Government Service</span>
+          <span class="scholarship-badge">Scholarship for Service</span>
+        </div>
       </div>
     </div>
   </section>
