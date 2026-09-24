@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Competitions | Josh Hung</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-home" aria-label="Home"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11.5 12 4l9 7.5"/><path d="M5 10v9.5a1 1 0 0 0 1 1h3.5v-6h5v6H18a1 1 0 0 0 1-1V10"/></svg></a>
+      <ul class="nav-links">
+        <li><a href="../about/">About</a></li>
+        <li><a href="../scholarship/">Scholarship</a></li>
+        <li><a href="../skills/">Skills</a></li>
+        <li><a href="../projects/">Projects</a></li>
+        <li><a href="../competitions/" class="active">Competitions</a></li>
+        <li><a href="../certifications/">Certs</a></li>
+        <li><a href="../contact/">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <div class="container">
+      <div class="page-header">
+        <p class="page-label">Competitions</p>
+        <h1 class="page-title">Cybersecurity Competition Experience</h1>
+      </div>
+
+      <div class="competition-list">
+        <div class="competition-card">
+          <div class="competition-header">
+            <div class="competition-title">CyberForce Competition — Linux Team Member</div>
+            <div class="competition-date">September–November 2025</div>
+          </div>
+          <div class="competition-org">U.S. Department of Energy · Six-person team · Tinley Park, IL</div>
+          <div class="competition-desc">
+            Maintained Linux-based web, mail, file-sharing, and remote-access services while reviewing Wazuh alerts as part
+            of incident triage and remediating issues during a live adversarial competition.
+          </div>
+          <div class="competition-desc">
+            Contributed to a six-person team vulnerability assessment that identified and documented more than 100
+            vulnerabilities and misconfigurations, developing prioritized remediation recommendations.
+          </div>
+          <div class="competition-desc">
+            Recommended infrastructure and monitoring improvements during a simulated executive presentation to
+            strengthen incident-response readiness for an industrial control systems environment.
+          </div>
+          <div class="competition-desc" style="margin-bottom: 0;">
+            Worked within competition infrastructure provided through AWS while coordinating Linux defense
+            responsibilities with a six-person cybersecurity team.
+          </div>
+          <div class="project-techs" style="margin-top: 1.1rem;">
+            <span class="tech-pill">Linux</span>
+            <span class="tech-pill">AWS</span>
+            <span class="tech-pill">Wazuh</span>
+            <span class="tech-pill">Incident Response</span>
+          </div>
+        </div>
+
+        <div class="competition-card">
+          <div class="competition-header">
+            <div class="competition-title">NCAE Cyber Games — Web Service</div>
+            <div class="competition-date">March 2026</div>
+          </div>
+          <div class="competition-org">National Security Agency (NSA) · 10-member team · Pomona, CA</div>
+          <div class="competition-desc">
+            Reviewed a Python Flask application's source code and identified server-side template injection, command
+            injection, SQL injection, insecure password-recovery logic, and exposed debug functionality.
+          </div>
+          <div class="competition-desc">
+            Remediated vulnerabilities using parameterized PostgreSQL queries, input validation, access controls, and
+            secure error handling, then used AI-assisted tools to identify and patch newly discovered issues in real time
+            during the live competition.
+          </div>
+          <div class="competition-desc" style="margin-bottom: 0;">
+            Hardened and deployed the application in a local Proxmox VE environment with a TLS-enabled Nginx reverse
+            proxy, restricted systemd service, and iptables rules, then generated SSL certificates from the competition's
+            internal CA and configured static IP addressing to sustain uptime during the live competition.
+          </div>
+
+          <div class="competition-stats">
+            <div class="stat-tile">
+              <div class="stat-value">5,030</div>
+              <div class="stat-label">Final score (pts)</div>
+            </div>
+            <div class="stat-tile">
+              <div class="stat-value">88%</div>
+              <div class="stat-label">Top service uptime</div>
+            </div>
+            <div class="stat-tile">
+              <div class="stat-value">24 / 26</div>
+              <div class="stat-label">Flags captured</div>
+            </div>
+          </div>
+
+          <div class="project-techs">
+            <span class="tech-pill">Flask</span>
+            <span class="tech-pill">PostgreSQL</span>
+            <span class="tech-pill">Nginx / TLS</span>
+            <span class="tech-pill">Proxmox VE</span>
+            <span class="tech-pill">iptables</span>
+          </div>
+        </div>
+
+        <div class="competition-card">
+          <div class="competition-header">
+            <div class="competition-title">Incoming CCDC Team Member — Cal Poly Pomona</div>
+            <div class="competition-date">TBD</div>
+          </div>
+          <div class="competition-org">Collegiate Cyber Defense Competition</div>
+          <div class="competition-desc" style="margin-bottom: 0;">
+            TBD
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="nav-logo">Josh Hung</div>
+      <p>© 2026 Josh Hung · Cal Poly Pomona CIS</p>
+    </div>
+  </footer>
+
+</body>
+</html>
